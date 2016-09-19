@@ -51,7 +51,7 @@ const styles = {
 };
 class Assessment extends Component {
   componentDidMount () {
-    this.props.appBarTitle && this.props.appBarTitle('mTBI Assessment');
+    this.props.appBarTitle && this.props.appBarTitle('Anger Assessment');
   }
 
   render () {
