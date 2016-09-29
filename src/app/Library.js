@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router';
 class Library extends Component {
   componentDidMount () {
     this.props.appBarTitle && this.props.appBarTitle('Anger Library');
@@ -79,7 +79,7 @@ Assertiveness doesn't mean ignoring your own rights and feelings - that's called
 behavior. Assertiveness means standing up for your rights, while respecting the rights of others.
 Here's how an assertive response to anger differs from an aggressive response.
 </p>
-
+<p><Link to="main/debug">Debug Test</Link></p>
   </div>
     );
   }
