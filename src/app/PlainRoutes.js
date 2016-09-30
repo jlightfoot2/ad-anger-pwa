@@ -20,7 +20,7 @@ const manifest = {
   3: (state) => ({...state, videos: undefined}),
   8: (state) => ({...state, assessment: undefined}),
   91: (state) => ({...state, navigation: undefined}),
-  97: (state) => ({...state, videos: undefined})
+  98: (state) => ({...state, videos: undefined})
 };
 
 // zubity bop
@@ -48,7 +48,16 @@ const history = syncHistoryWithStore(hashHistory, store);
 
 if ('serviceWorker' in navigator) {
   const registrationPromise = navigator.serviceWorker.register('./ad-service-worker.js');
-  registerPromise(registrationPromise, store);
+  registerPromise(registrationPromise, store).then(function (res) {
+    if (__DEVTOOLS__) {
+      console.log(res);
+    }
+  }).catch(function (e) {
+    if (__DEVTOOLS__) {
+      console.log(e);
+    }
+    throw e;
+  });
 }
 
 if (__DEVTOOLS__) {
