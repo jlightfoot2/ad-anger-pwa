@@ -12,7 +12,6 @@ import {persistStore, autoRehydrate} from 'redux-persist';
 import {appActions, appSaga, registerPromise} from 'local-t2-app-redux';
 import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
 import createSagaMiddleware from 'redux-saga';
-import sagaRoot from './sagas';
 import {navigationCreateMiddleware} from 'local-t2-navigation-redux';
 import navigationConfig from './navigationConfig';
 import createMigration from 'redux-persist-migrate';
@@ -21,8 +20,7 @@ const manifest = {
   3: (state) => ({...state, videos: undefined}),
   8: (state) => ({...state, assessment: undefined}),
   91: (state) => ({...state, navigation: undefined}),
-  92: (state) => ({...state, navigation: undefined}),
-  99: (state) => ({...state, videos: undefined})
+  97: (state) => ({...state, videos: undefined})
 };
 
 // zubity bop
