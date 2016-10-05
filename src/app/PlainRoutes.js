@@ -46,18 +46,20 @@ sagaMiddleware.run(appSaga);
 
 const history = syncHistoryWithStore(hashHistory, store);
 
-if ('serviceWorker' in navigator) {
-  const registrationPromise = navigator.serviceWorker.register('./ad-service-worker.js');
-  registerPromise(registrationPromise, store).then(function (res) {
-    if (__DEVTOOLS__) {
-      console.log(res);
-    }
-  }).catch(function (e) {
-    if (__DEVTOOLS__) {
-      console.log(e);
-    }
-    throw e;
-  });
+if(__INCLUDE_SERVICE_WORKER__){
+  if ('serviceWorker' in navigator) {
+    const registrationPromise = navigator.serviceWorker.register('./ad-service-worker.js');
+    registerPromise(registrationPromise, store).then(function (res) {
+      if (__DEVTOOLS__) {
+        console.log(res);
+      }
+    }).catch(function (e) {
+      if (__DEVTOOLS__) {
+        console.log(e);
+      }
+      throw e;
+    });
+  }
 }
 
 if (__DEVTOOLS__) {
