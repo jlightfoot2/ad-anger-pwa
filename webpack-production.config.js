@@ -3,6 +3,7 @@ const path = require('path');
 const buildPath = path.resolve(__dirname, 'build');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PathRewriterPlugin = require('webpack-path-rewriter');
 const config = {
@@ -18,6 +19,7 @@ const config = {
     filename: 'app.js' // Name of output file
   },
   plugins: [
+    new WebpackCleanupPlugin(),
     // http://dev.topheman.com/make-your-react-production-minified-version-with-webpack/
     new webpack.DefinePlugin({
       'process.env': {
