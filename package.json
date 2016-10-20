@@ -1,11 +1,7 @@
 {
-  "name": "material-ui-example-webpack",
-  "version": "0.15.0",
-  "description": "Sample project that uses Material-UI",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/callemall/material-ui.git"
-  },
+  "name": "ad-anger-module",
+  "version": "0.0.1",
+  "description": "Sample project that uses Material-UI, Redux",
   "scripts": {
     "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
     "build": "webpack --config webpack-production.config.js --progress --colors",
