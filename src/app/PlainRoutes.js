@@ -23,6 +23,7 @@ import {navigationCreateMiddleware} from 'local-t2-navigation-redux';
 import navigationConfig from './navigationConfig';
 import createMigration from 'redux-persist-migrate';
 import appHub from './reducers';
+
 /**
  * Apply migrations that have yet to be run.
  */
@@ -64,7 +65,7 @@ const store = createStore(
     persistEnhancer
   );
 
-sagaMiddleware.run(appSaga); //s aga middleware will not run until this operation  is called
+sagaMiddleware.run(appSaga); // saga middleware will not run until this operation  is called
 
 const history = syncHistoryWithStore(hashHistory, store);
 
@@ -77,7 +78,7 @@ if(__INCLUDE_SERVICE_WORKER__){ // __INCLUDE_SERVICE_WORKER__ and other __VAR_NA
     /**
      * registerPromise takes the serviceWorker promise and listens for
      * certain events which will trigger redux dispatch events
-     * 
+     *
      * @see https://github.com/jlightfoot2/local-t2-app-redux/blob/master/src/lib/serviceWorker.js
      */
     registerPromise(registrationPromise, store).then(function (res) {
