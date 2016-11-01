@@ -1,13 +1,15 @@
-import React, {Component} from 'react';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 import { connect } from 'react-redux';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
-import IconButton from 'material-ui/IconButton/IconButton';
+import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import ArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
 import { Link } from 'react-router';
 import Divider from 'material-ui/Divider';
-
+import {push} from 'react-router-redux';
+import { withRouter } from 'react-router'
 /**
  * AppBarMenuIcon provides the left icon in the top navigation bar
  * @param  {[type]} options.paths   [description]
@@ -15,13 +17,15 @@ import Divider from 'material-ui/Divider';
  * @param  {[type]} options.parent  [description]
  * @return {[type]}                 [description]
  */
-const AppBarMenuIcon = ({paths, submenu, parent}) => {
+const AppBarMenuIcon = ({paths, submenu, parent, onItemClick,router, dispatch}) => {
   if (paths.current.level > 0) {
     if (parent) {
       return (<Link to={parent.pathname}><IconButton><ArrowBack /></IconButton></Link>);
     }
     return (<Link to="/main/home"><IconButton><ArrowBack /></IconButton></Link>);
   } else {
+    const onItemClick = (path) => () => dispatch(router.push(path));
+ 
     return (
       <IconMenu
         iconButtonElement={
@@ -32,7 +36,7 @@ const AppBarMenuIcon = ({paths, submenu, parent}) => {
         >
 
         {submenu.map((item) => (
-           <MenuItem key={item.id} primaryText={item.name} containerElement={<Link to={item.pathname} />} />
+           <MenuItem key={item.id} primaryText={item.name} onTouchTap={onItemClick(item.pathname)} />
         ))}
         <Divider />
         <MenuItem key="0" primaryText={'App Hub'} href="https://jlightfoot2.github.io/ad-pwa/build/#/apps" />
@@ -52,5 +56,12 @@ const mapStateToProp = (state, ownProps) => {
     parent: state.navigation.paths.parent // for convenience we introduce the parent as a property as a default back button destination
   };
 };
-export default connect(mapStateToProp)(AppBarMenuIcon);
+
+const dispatchToProp = (dispatch) => {
+  return {
+    dispatch
+    //onItemClick: (path) => () => dispatch(push(path))
+  }
+};
+export default connect(mapStateToProp,dispatchToProp)(withRouter(AppBarMenuIcon));
 

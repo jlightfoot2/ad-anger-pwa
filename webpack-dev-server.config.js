@@ -49,6 +49,11 @@ const config = {
         loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
         exclude: [nodeModulesPath]
       },
+      { 
+        test: /\.tsx?$/, 
+        loader: "ts-loader",
+        exclude: [nodeModulesPath]
+      },
       {
         test: /\.(png|gif|jpe?g|svg)$/i,
         loader: 'url?limit=100&name=static/[name]-[hash].[ext]'
@@ -78,6 +83,8 @@ const config = {
         })
       }
     ]
+  },
+  externals: {
   }
 };
 
