@@ -1,7 +1,9 @@
-import React,{Component} from 'react';
+import * as React from "react";
 import Snackbar from 'material-ui/Snackbar';
 import { connect } from 'react-redux';
+
 import {hideFlashMessage} from './actions';
+
 
 /**
  * AppSnackBar is a message box that slides up from the button of the screen
