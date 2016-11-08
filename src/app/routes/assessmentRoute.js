@@ -1,4 +1,4 @@
-import Assessment from '../Assessment2.js';
+import Assessment from '../Assessment2.tsx';
 
 export default {
   path: 'assessment',

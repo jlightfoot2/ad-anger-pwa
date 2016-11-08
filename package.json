@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Sample project that uses Material-UI, Redux",
   "scripts": {
-    "start": "webpack-dev-server --config webpack-dev-server.config.js --progress --inline --colors",
+    "start": "webpack-dev-server --display-error-details --config webpack-dev-server.config.js --progress --inline --colors ",
     "build": "webpack --config webpack-production.config.js --progress --colors",
     "serve": "node server.js",
     "lint": "./node_modules/.bin/eslint src"
@@ -39,6 +39,7 @@
   "dependencies": {
     "@types/history": "^2.0.39",
     "@types/material-ui": "^0.16.38",
+    "@types/object-assign": "^4.0.30",
     "@types/react": "^0.14.44",
     "@types/react-dom": "^0.14.18",
     "@types/react-redux": "^4.4.32",
@@ -60,6 +61,7 @@
     "material-ui": "^0.16.1",
     "normalizr": "^2.1.0",
     "npm": "^3.10.5",
+    "object-assign": "^4.1.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-motion": "^0.4.4",

@@ -8,7 +8,7 @@ import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 
 import OnlineStatusBarIcon from './OnlineStatusContainer.js';
-import AppSnackBar from './AppSnackBar.js';
+import AppSnackBar from './AppSnackBar.tsx';
 import AppBarMenuIcon from './AppBarMenuIcon.tsx';
 import { connect } from 'react-redux';
 import {userSeesSplash, userSeesIntro} from './actions';

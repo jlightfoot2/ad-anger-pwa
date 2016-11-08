@@ -13,5 +13,6 @@ declare namespace Actions {
   function showFlashMessage(text: string): BasicAction;
 
   function toggleT2AppFromMyList(id: number): BasicAction;
-
+  function formSubmitted(formId: number,fields: any): BasicAction;
+  function fieldChange(field: any): BasicAction;
 }
