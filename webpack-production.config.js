@@ -86,7 +86,7 @@ const config = {
         exclude: [nodeModulesPath]
       },
       {
-        test: /\.tsx?$/, 
+        test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: [nodeModulesPath]
       },
