@@ -1,4 +1,4 @@
-import VideoPage from '../VideoContainer.js';
+import VideoPage from '../VideoContainer.tsx';
 
 const dynamicVideoPage = {
   path: 'video/:id',

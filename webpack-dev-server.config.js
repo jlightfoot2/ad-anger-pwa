@@ -10,7 +10,7 @@ const config = {
     'babel-polyfill',
     'webpack/hot/dev-server',
     'webpack/hot/only-dev-server',
-    path.join(__dirname, '/src/app/app.js')
+    path.join(__dirname, '/src/app/app.tsx')
   ],
   resolve: {
     root: path.resolve(__dirname),

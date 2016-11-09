@@ -1,4 +1,4 @@
-import VideosPage from '../VideosPage.js';
+import VideosPage from '../VideosPage';
 const dynamicVideosPage = {
   path: 'videos',
   name: 'videos',

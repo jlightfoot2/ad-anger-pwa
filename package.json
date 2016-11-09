@@ -12,6 +12,8 @@
   "private": true,
   "devDependencies": {
     "@types/core-js": "^0.9.34",
+    "@types/react-tap-event-plugin": "0.0.30",
+    "@types/redux-thunk": "^2.1.31",
     "babel-core": "^6.13.2",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^6.2.4",

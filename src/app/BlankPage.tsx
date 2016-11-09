@@ -12,14 +12,15 @@ import SplashPage from './SplashPage';
 import siteTheme from './customTheme';
 
 const muiTheme = getMuiTheme(siteTheme);
-interface MyProps {
-  props: any;
+interface MyProps2 {
+  [propName: string]: any;
 }
 
 interface MyState {
-  
+  [propName: string]: any;
+  props: any;
 }
-class BlankPage extends React.Component<MyProps,  MyState>{
+class BlankPage extends React.Component<MyProps2,  MyState>{
 
   render () {
     return (
