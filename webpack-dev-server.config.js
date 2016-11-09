@@ -14,7 +14,7 @@ const config = {
   ],
   resolve: {
     root: path.resolve(__dirname),
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   // Server Configuration options
   devServer: {
@@ -50,9 +50,9 @@ const config = {
         loaders: ['react-hot', 'babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
         exclude: [nodeModulesPath]
       },
-      { 
+      {
         test: /\.tsx?$/, 
-        loader: "ts-loader",
+        loader: 'ts-loader',
         exclude: [nodeModulesPath]
       },
       {

@@ -7,9 +7,10 @@ const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const PathRewriterPlugin = require('webpack-path-rewriter');
 const config = {
-  entry: ['babel-polyfill', path.join(__dirname, '/src/app/app.js')],
+  entry: ['babel-polyfill', path.join(__dirname, '/src/app/app.tsx')],
   resolve: {
-    root: path.resolve(__dirname)
+    root: path.resolve(__dirname),
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
   },
   // Render source-map file for final build
   devtool: 'source-map',
@@ -82,6 +83,11 @@ const config = {
       {
         test: /\.js$/, // All .js files
         loaders: ['babel-loader'], // react-hot is like browser sync and babel loads jsx and es6-7
+        exclude: [nodeModulesPath]
+      },
+      {
+        test: /\.tsx?$/, 
+        loader: 'ts-loader',
         exclude: [nodeModulesPath]
       },
       {
