@@ -1,4 +1,4 @@
-import Intro from '../Intro.js';
+import Intro from '../Intro.tsx';
 
 export default {
   path: '/',

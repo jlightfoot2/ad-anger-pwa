@@ -1,4 +1,4 @@
-import Video from './Video.js';
+import Video from './Video.tsx';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state, ownProps) => {

@@ -1,7 +1,15 @@
-import React,{Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-class Library extends Component {
+interface MyProps {
+  appBarTitle(title: string): any;
+}
+
+interface MyState {
+ 
+}
+class Library extends React.Component<MyProps, MyState> {
   componentDidMount () {
     this.props.appBarTitle && this.props.appBarTitle('Anger Library');
   }

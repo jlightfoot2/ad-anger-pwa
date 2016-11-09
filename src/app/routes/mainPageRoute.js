@@ -1,5 +1,5 @@
 
-import Main from '../Main.js';
+import Main from '../Main.tsx';
 
 export default {
   path: 'main',

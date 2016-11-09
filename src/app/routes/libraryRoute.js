@@ -1,4 +1,4 @@
-import PTSComponent from '../Library.js';
+import PTSComponent from '../Library.tsx';
 
 export default {
   path: 'library',

@@ -1,4 +1,4 @@
-import NotFound from '../NotFound.js';
+import NotFound from '../NotFound.tsx';
 export default {
   path: '*',
   name: 'home',

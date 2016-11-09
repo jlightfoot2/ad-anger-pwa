@@ -11,8 +11,8 @@ import AppButtonIcon from './AppButtonIcon.tsx';
 import PlayIcon from 'material-ui/svg-icons/av/play-circle-outline';
 import IconButton from 'material-ui/IconButton';
 import CheckBox from 'material-ui/svg-icons/toggle/check-box';
-import Connectivity from './Connectivity.js';
-import OnlineOnlyLink from './OnlineOnlyLink.js';
+import Connectivity from './Connectivity.tsx';
+import OnlineOnlyLink from './OnlineOnlyLink.tsx';
 const styles = {
   gridList: {
     overflowY: 'auto',

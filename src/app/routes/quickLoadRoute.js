@@ -1,4 +1,4 @@
-import Main from '../Main.js';
+import Main from '../Main.tsx';
 export default {
   getComponent (nextState, cb) {
     console.log('quick Load comp called');

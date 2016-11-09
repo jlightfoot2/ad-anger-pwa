@@ -1,4 +1,4 @@
-import AssessmentResult from '../AssessmentResult.js';
+import AssessmentResult from '../AssessmentResult.tsx';
 
 export default {
 	path: 'result',

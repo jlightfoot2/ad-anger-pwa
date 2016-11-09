@@ -1,17 +1,25 @@
-import React,{Component} from 'react';
-import { reduxForm } from 'redux-form'
-import D3LinearaGauge from './D3LinearaGauge.js';
+
+declare var gsap: any
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { reduxForm } from 'redux-form';
+import {D3LinearaGauge} from './D3LinearaGauge';
 import { connect } from 'react-redux';
-import ReactTransitionGroup from 'react-addons-transition-group';
-import {TweenLite} from 'gsap';
+import * as ReactTransitionGroup from 'react-addons-transition-group';
+
 
 var styles = {
   container: {
     padding: 10
   }
 };
-
-class AssessmentText extends Component {
+interface Props {
+  [propName: string]: any;
+}
+interface State {
+  [propName: string]: any;
+}
+class AssessmentText extends React.Component<Props, State> {
   componentWillAppear (callback) {
     this._animateIn(callback);
   }
@@ -21,10 +29,11 @@ class AssessmentText extends Component {
   }
 
   _animateIn (callback) {
-    var el = this.refs.assessmentText;
-    TweenLite.set(el, {opacity: 0});
+
+        var el = this.refs['assessmentText']; //!! TODO check
+    //TweenLite.set(el, {opacity: 0});
     setTimeout(function () {
-      TweenLite.to(el, 1, {opacity: 1}).play().eventCallback('onComplete', callback);
+    //  TweenLite.to(el, 1, {opacity: 1}).play().eventCallback('onComplete', callback);
     }, 1000);
   }
 

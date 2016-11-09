@@ -1,4 +1,4 @@
-import ResourcesComponent from '../Resources.js';
+import ResourcesComponent from '../Resources.tsx';
 
 export default {
   path: 'resources',

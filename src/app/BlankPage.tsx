@@ -3,16 +3,23 @@
  * which incorporates components provided by Material-UI.
  * The BlankPage component provides a theme wrapper for all child components
  */
-import React, {Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import SplashPage from './SplashPage.js';
+import SplashPage from './SplashPage';
 import siteTheme from './customTheme';
 
 const muiTheme = getMuiTheme(siteTheme);
+interface MyProps {
+  props: any;
+}
 
-class BlankPage extends Component {
+interface MyState {
+  
+}
+class BlankPage extends React.Component<MyProps,  MyState>{
 
   render () {
     return (

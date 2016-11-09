@@ -1,5 +1,7 @@
 
-import React, {Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
 import {connect} from 'react-redux';
 
 const styles = {
@@ -8,7 +10,17 @@ const styles = {
     height: 'auto'
   }
 };
-class videoViewer extends Component {
+
+interface MyProps {
+  appBarTitle(title: string): any;
+  video: any;
+  isOnline: any;
+}
+
+interface MyState {
+
+}
+class videoViewer extends React.Component<MyProps, MyState> {
   componentWillMount () {
     var {video} = this.props;
     this.props.appBarTitle && this.props.appBarTitle(video.title);

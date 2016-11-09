@@ -1,7 +1,8 @@
-import React,{Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import {showFlashMessage} from './actions';
-
+import * as objectAssign from 'object-assign';
 const styles = {
   root: {
     display: 'flex',
@@ -15,14 +16,9 @@ const styles = {
 
 const Connectivity = (props) => {
 	var {isOnline,flashMessage} = props;
-	const onlineMessage = function(){
-		if(!isOnline){
-			flashMessage("This feature is not available offline")
-		}
-	}
 	return (
-		<div onTouchTap={onlineMessage}>
-			{React.cloneElement(props.children, Object.assign({ isOnline },props))}
+		<div>
+			{React.cloneElement(props.children, objectAssign({ isOnline },props))}
 		</div>
 		)
 }

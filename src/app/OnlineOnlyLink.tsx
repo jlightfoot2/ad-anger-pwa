@@ -1,5 +1,7 @@
 import { Link, browserHistory } from 'react-router'
-import React,{Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+
 
 const OnlineOnlyLink = function(props){
 	var {isOnline} = props;

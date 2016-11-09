@@ -1,8 +1,7 @@
-import StatusIcon from './StatusIcon.js';
+import StatusIcon from './StatusIcon';
 import { connect } from 'react-redux';
-import {checkIsOnline} from './actions';
 
-const mapStateToProps = (state,ownProps) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     onlineStatus: state.app.connectivity.status
   };
@@ -10,7 +9,6 @@ const mapStateToProps = (state,ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    checkOnlineStatus: () => dispatch(checkIsOnline('event'))
   };
 };
 

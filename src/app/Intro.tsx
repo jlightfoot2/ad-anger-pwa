@@ -1,8 +1,17 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import {Card, CardActions, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Link } from 'react-router';
-export default class HomePage extends Component {
+
+interface MyProps {
+  appBarTitle(msg: string): any;
+}
+
+interface MyState {
+ 
+}
+export default class HomePage extends React.Component<MyProps, MyState> {
   constructor (props) {
     super(props);
     this.props = props;

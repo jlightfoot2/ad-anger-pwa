@@ -15,4 +15,5 @@ declare namespace Actions {
   function toggleT2AppFromMyList(id: number): BasicAction;
   function formSubmitted(formId: number,fields: any): BasicAction;
   function fieldChange(field: any): BasicAction;
+  function checkIsOnline(msg: string): BasicAction;
 }

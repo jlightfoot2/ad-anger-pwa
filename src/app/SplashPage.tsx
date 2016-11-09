@@ -1,5 +1,6 @@
 import { Link, browserHistory } from 'react-router';
-import React, {Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import CircularProgress from 'material-ui/CircularProgress';
 const styles = {
   content: {
@@ -10,7 +11,7 @@ const styles = {
   }
 };
 const Splash = () => {
-	return (<div style={styles.content}><CircularProgress /></div>);
+	return (<div style={styles.content as any}><CircularProgress /></div>);
 };
 
 export default Splash;

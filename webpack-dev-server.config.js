@@ -13,7 +13,8 @@ const config = {
     path.join(__dirname, '/src/app/app.js')
   ],
   resolve: {
-    root: path.resolve(__dirname)
+    root: path.resolve(__dirname),
+    extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   // Server Configuration options
   devServer: {

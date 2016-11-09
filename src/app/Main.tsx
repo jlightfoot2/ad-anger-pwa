@@ -2,16 +2,17 @@
  * In this file, we create a React component
  * which incorporates components provided by Material-UI.
  */
-import React, {Component} from 'react';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 
-import OnlineStatusBarIcon from './OnlineStatusContainer.js';
-import AppSnackBar from './AppSnackBar.tsx';
-import AppBarMenuIcon from './AppBarMenuIcon.tsx';
+import OnlineStatusBarIcon from './OnlineStatusContainer';
+import AppSnackBar from './AppSnackBar';
+import AppBarMenuIcon from './AppBarMenuIcon';
 import { connect } from 'react-redux';
-import {userSeesSplash, userSeesIntro} from './actions';
+
 import {push, replace} from 'react-router-redux';
 import { withRouter } from 'react-router';
 import {UpdateDialogContainer} from 'local-t2-app-redux/lib/components';
@@ -31,8 +32,23 @@ const styles = {
     justifyContent: 'center'
   }
 };
+interface MyProps {
+  appBarTitle?(title: string): any;
+  dispatch(arg: any): any;
+  device: any;
+  children: any;
+}
 
-class Main extends Component {
+interface MyState {
+  title?: any,
+  open?: boolean
+}
+
+
+class Main extends React.Component<MyProps, MyState>{
+  static contextTypes: any = {
+                                router: React.PropTypes.object.isRequired
+                              };
   constructor (props, context) {
     super(props, context);
 
@@ -44,6 +60,7 @@ class Main extends Component {
       title: ''
     };
   }
+
   componentWillMount () {
     this.props.dispatch(windowResize(window.innerWidth, window.innerHeight));
   }
@@ -75,17 +92,14 @@ class Main extends Component {
                 iconElementLeft={<AppBarMenuIcon/>}
                 iconElementRight={<OnlineStatusBarIcon />}
                  />
-                <div style={styles.content}>{React.cloneElement(this.props.children, { appBarTitle: this.handleTitle })}</div>
+                <div style={styles.content as any}>{React.cloneElement(this.props.children, { appBarTitle: this.handleTitle })}</div>
           <UpdateDialogContainer />
           <AppSnackBar />
         </div>
     );
   }
 }
-
-Main.contextTypes = {
-  router: React.PropTypes.object.isRequired
-};
+ 
 export default connect(
   (state) => ({
     device: state.device
