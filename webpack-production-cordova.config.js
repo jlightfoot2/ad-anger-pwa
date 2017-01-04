@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const buildPath = path.resolve(__dirname, 'build');
+const buildPath = path.resolve(__dirname, 'cordova/www');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');

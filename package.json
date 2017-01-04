@@ -5,6 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --display-error-details --config webpack-dev-server.config.js --progress --inline --colors ",
     "build": "webpack --display-error-details --config webpack-production.config.js --progress --colors",
+    "build-cordova": "webpack --display-error-details --config webpack-production-cordova.config.js --progress --colors",
     "serve": "node server.js",
     "lint": "./node_modules/.bin/eslint src"
   },

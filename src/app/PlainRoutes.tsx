@@ -101,7 +101,10 @@ if (__DEVTOOLS__) { // Webpack defined variable for build process
     console.log(store.getState()); // list entire state of app in js console. Essential for debugging.
   });
 }
+document.addEventListener('deviceready', function(){
 
+  store.dispatch({type: 'CORDOVA_DEVICE_READY'});
+}, false);
 /**
  * This is the root route.
  * Like any route is used to bind Components to a route.
@@ -140,6 +143,7 @@ interface MyState {
  [propName: string]: any;
  rehydrated: any;
 }
+
 export default class AppProvider extends React.Component<MyProps, MyState> {
 
   constructor (props) {
