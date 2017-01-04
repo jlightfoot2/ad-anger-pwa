@@ -8,12 +8,12 @@ import Subheader from 'material-ui/Subheader';
 import { connect } from 'react-redux';
 import { toggleT2AppFromMyList, showFlashMessage} from './actions';
 import { List, Map } from 'immutable';
-import AppButtonIcon from './AppButtonIcon.tsx';
+import AppButtonIcon from './AppButtonIcon';
 import PlayIcon from 'material-ui/svg-icons/av/play-circle-outline';
 import IconButton from 'material-ui/IconButton';
 import CheckBox from 'material-ui/svg-icons/toggle/check-box';
-import Connectivity from './Connectivity.tsx';
-import OnlineOnlyLink from './OnlineOnlyLink.tsx';
+import Connectivity from './Connectivity';
+import OnlineOnlyLink from './OnlineOnlyLink';
 const styles = {
   gridList: {
     overflowY: 'auto',
